@@ -1,16 +1,32 @@
-# React + Vite
+ ## 🧠 Implementation Decisions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Component Architecture
+The application is structured using a component-driven approach.  
+Layout components (AppLayout, Sidebar) are separated from page-level components to keep UI reusable and scalable as the application grows.
 
-Currently, two official plugins are available:
+### Styling Strategy
+Tailwind CSS was used for rapid UI development while maintaining consistency through custom theme variables.  
+Common colors and spacing tokens were centralized to avoid hardcoded styles across components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Folder Organization
+The project separates:
+- layouts → application shell
+- pages → route-level screens
+- components → reusable UI pieces
 
-## React Compiler
+This helps maintain clarity and makes onboarding easier for future contributors.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Responsiveness
+Instead of creating separate layouts, responsive behavior was handled using Tailwind breakpoints.  
+The authentication page switches from split layout (desktop) to stacked layout (mobile) for better usability.
 
-## Expanding the ESLint configuration
+### Performance Considerations
+- Components kept small and reusable
+- Minimal prop drilling
+- Clean layout hierarchy to avoid unnecessary re-renders
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Scalability
+The structure allows easy addition of:
+- protected routes
+- API integration
+- global state management (Context/Redux) if required later

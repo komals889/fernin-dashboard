@@ -1,0 +1,73 @@
+export const scans = [
+  {
+    id: "web-app-1",
+    name: "Web App Server",
+    type: "Greybox",
+    status: "Completed",
+    progress: 100,
+    vulnerabilities: {
+      critical: 1,
+      high: 2,
+      medium: 1,
+      low: 0,
+    },
+    lastScan: "4d ago",
+  },
+  {
+    id: "web-app-2",
+    name: "Marketing Site",
+    type: "Greybox",
+    status: "Completed",
+    progress: 100,
+    vulnerabilities: {
+      critical: 0,
+      high: 1,
+      medium: 2,
+      low: 1,
+    },
+    lastScan: "2d ago",
+  },
+  {
+    id: "iot-1",
+    name: "IoT Device",
+    type: "Blackbox",
+    status: "Failed",
+    progress: 10,
+    vulnerabilities: {
+      critical: 3,
+      high: 2,
+      medium: 0,
+      low: 0,
+    },
+    lastScan: "3d ago",
+  },
+  {
+    id: "temp-db",
+    name: "Temp Data Store",
+    type: "Blackbox",
+    status: "Failed",
+    progress: 10,
+    vulnerabilities: {
+      critical: 2,
+      high: 1,
+      medium: 1,
+      low: 0,
+    },
+    lastScan: "3d ago",
+  },
+  {
+    id: "scheduled-1",
+    name: "Private Asset Scan",
+    type: "Greybox",
+    status: "Scheduled",
+    progress: 0,
+    vulnerabilities: {
+      critical: 0,
+      high: 0,
+      medium: 0,
+      low: 0,
+    },
+    lastScan: "in 10 min",
+  },
+];
+
